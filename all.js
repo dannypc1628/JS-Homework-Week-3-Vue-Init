@@ -38,7 +38,7 @@ var app = new Vue({
             console.log(item);
             this.modalTitle = "編輯產品";
             this.modalButton = "儲存";
-            this.pushTempData(item);
+            this.showTempData(item);
         },
         cleanTempData() {
             this.tempData = {
@@ -57,7 +57,7 @@ var app = new Vue({
             this.deleteItemName = item.title;
             $('#deleteModal').modal('show');
         },
-        pushTempData(item) {
+        showTempData(item) {
             this.tempData = {
                 title: item.title,
                 category: item.category,
@@ -74,7 +74,7 @@ var app = new Vue({
     },
     created() {
         const vm = this;
-        axios.defaults.headers.common['Authorization'] = httpClient.token;
+        //axios.defaults.headers.common['Authorization'] = httpClient.token;
         vm.getList();
     }
 });

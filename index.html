@@ -137,6 +137,7 @@
                         <th scope="col">產品名稱</th>
                         <th scope="col">原價</th>
                         <th scope="col">售價</th>
+                        <th scope="col">是否啟用</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -146,6 +147,8 @@
                         <td>{{item.title}}</td>
                         <td>{{item.origin_price}}</td>
                         <td>{{item.price}}</td>
+                        <td class="text-success" v-if="item.enabled">已啟用</td>
+                        <td class="text-danger" v-else>未啟用</td>
                         <td>
                             <input class="btn btn-success" type="button" @click="edit(item)" value="編輯">
                             <input class="btn btn-danger" type="button" @click="deleted(item)" value="刪除">
